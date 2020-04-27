@@ -1,0 +1,15 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: zh
+pipeline:
+  - name: "components.message_recieve.UserInit"
+  - name: "JiebaTokenizer"
+  - name: "components.rule_entity_extractor.RuleEntityExtractor"
+  - name: "components.entity_extractor.BiLSTMEntityExtractor"
+  - name: "components.rule_cause_classifier.RuleCauseClassifier"
+
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: FramePolicy
